@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Jekyll v4.1.1" />
+    <title>Mobile Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="../assets/style/mobileForm.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
+    >
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Mobile</a>
+      <button
+        class="navbar-toggler position-absolute d-md-none collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <input
+        class="form-control form-control-dark w-100"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          id="sidebarMenu"
+          class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+        >
+          <div class="sidebar-sticky pt-3">
+            <ul class="nav flex-column">
+              <!-- <li class="nav-item">
+                      <a class="nav-link " href="./index.html">
+                        <i class="fa fa-home"></i>
+                        Dashboard 
+                      </a>
+                    </li> -->
+              <li class="nav-item">
+                <a class="nav-link active" href="./mobile.html">
+                  <i class="fas fa-mobile-alt"></i>
+                  Add Mobile<span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./mobile-list.html">
+                  <i class="fa fa-list"></i>
+                  Mobile List
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5500/CAPSTONE-JS/CAPSTONE%20JS/index.html">
+                  Về trang chủ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <nav class="my-3" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page">
+                Add Mobile
+              </li>
+            </ol>
+          </nav>
+          <div class="row">
+            <div class="col-md-7">
+              <div class="card">
+                <div class="card-header">
+                  <h5>ADD MOBILE FORM</h5>
+                </div>
+                <div class="card-body">
+                  <form class="needs-validation" id="mobileForm">
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="mobileID">Mã sản phẩm</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="mobileID"
+                          name="maDienThoai"
+                          placeholder="Nhập ID"
+                          value=""
+                          required
+                        />
+                        <div id="invalidID" class="invalid-feedback"></div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label for="mobileName">Tên sản phẩm</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="mobileName"
+                          name="tenDienThoai"
+                          placeholder="Nhập tên sản phẩm"
+                          value=""
+                          required
+                        />
+                        <div id="invalidTen" class="invalid-feedback"></div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label for="manHinh">Màn hình</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="screen"
+                          name="manHinh"
+                          placeholder="Thông số màn hình"
+                          required
+                        />
+                        <div id="invalidScreen" class="invalid-form"></div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label for="backCamera">Camera sau</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="backCamera"
+                          name="cameraSau"
+                          placeholder="Nhập thông tin camera sau"
+                          required
+                        />
+                        <div id="invalidBC" class="invalid-form"></div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label for="fontCamera">Camera trước</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="frontCamera"
+                          name="cameraTruoc"
+                          placeholder="Nhập thông tin camera trước"
+                          required
+                        />
+                        <div id="invalidFC" class="invalid-form"></div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label for="loai">Loại</label>
+                        <select
+                          class="custom-select d-block w-100"
+                          id="loai"
+                          name="loai"
+                          required
+                        >
+                          <option value="">Chọn loại</option>
+                          <option value="loai1">Iphone</option>
+                          <option value="loai2">Samsung</option>
+                        </select>
+                        <div
+                          id="invalidLoai"
+                          class="invalid-feedback"
+                          style="display: block"
+                        ></div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="giaSP">Giá sản phẩm</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="giaSP"
+                          name="giaSP"
+                          placeholder="Nhập giá"
+                          value=""
+                          required
+                        />
+                        <div id="invalidGia" class="invalid-feedback"></div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                          <label for="hinhSP">Hình sản phẩm</label>
+                          <input
+                            type="text"
+                            id="hinhSP"
+                            name="hinhSP"
+                            class="form-control"
+                            placeholder="Nhập link hình ảnh"
+                            required
+                          />
+                          <div id="invalidHinh" class="invalid-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="moTa">Mô Tả</label>
+                      <textarea
+                        class="form-control"
+                        id="moTa"
+                        name="moTa"
+                        rows="3"
+                      ></textarea>
+                      <div id="invalidMoTa" class="invalid-form"></div>
+                    </div>
+                    <hr class="mb-4" />
+                    <button
+                      id="btnThemSP"
+                      class="btn btn-info btn-lg btn-block"
+                      type="button"
+                    >
+                      Thêm sản phẩm
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="card mobileDetail">
+                <div class="card-header">
+                  <h5>MOBILE DETAILS</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group mb-3">
+                    <li
+                      class="list-group-item d-flex justify-content-between lh-condensed"
+                    >
+                      <img
+                        id="imgMobile"
+                        name="hinhSP"
+                        src=""
+                        alt="hình sản phẩm"
+                      />
+                    </li>
+                    <li
+                      class="list-group-item d-flex justify-content-between lh-condensed"
+                    >
+                      <div>
+                        <h6 class="my-0">Mã sản phẩm</h6>
+                      </div>
+                      <span
+                        id="spMa"
+                        name="maDienThoai"
+                        class="text-muted"
+                      ></span>
+                    </li>
+
+                    <li
+                      class="list-group-item d-flex justify-content-between lh-condensed"
+                    >
+                      <div>
+                        <h6 class="my-0">Tên Sản phẩm</h6>
+                      </div>
+                      <span id="spTenSP" name="tenSP" class="text-muted"></span>
+                    </li>
+
+                    <li
+                      class="list-group-item d-flex justify-content-between lh-condensed"
+                    >
+                      <div>
+                        <h6 class="my-0">Màn hình</h6>
+                      </div>
+                      <span
+                        id="spScreen"
+                        name="manHinh"
+                        class="text-muted"
+                      ></span>
+                    </li>
+                    <li
+                      class="list-group-item d-flex justify-content-between lh-condensed"
+                    >
+                      <div>
+                        <h6 class="my-0">Camera sau</h6>
+                      </div>
+                      <span
+                        id="spBackCamera"
+                        name="cameraSau"
+                        class="text-muted"
+                      ></span>
+                    </li>
+                    <li
+                      class="list-group-item d-flex justify-content-between lh-condensed"
+                    >
+                      <div>
+                        <h6 class="my-0">Camera trước</h6>
+                      </div>
+                      <span
+                        id="spFrontCamera"
+                        name="cameraTruoc"
+                        class="text-muted"
+                      ></span>
+                    </li>
+
+                    <li
+                      class="list-group-item d-flex justify-content-between lh-condensed"
+                    >
+                      <div>
+                        <h6 class="my-0">Loại Sản phẩm</h6>
+                      </div>
+                      <span id="spLoaiSP" name="loai" class="text-muted">
+                      </span>
+                    </li>
+                    <li
+                      class="list-group-item d-flex justify-content-between lh-condensed"
+                    >
+                      <div>
+                        <h6 class="my-0">Giá sản phẩm</h6>
+                      </div>
+                      <span id="spGia" name="giaSP" class="text-muted"> </span>
+                    </li>
+
+                    <li
+                      class="list-group-item d-flex justify-content-between lh-condensed"
+                    >
+                      <div>
+                        <h6>Mô tả</h6>
+
+                        <p id="spMoTa" name="moTa" class="text-muted"></p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2010 - NOW: Mobile Company</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+      <!-- copy footer của Huy bỏ vào  -->
+    </footer>
+    <script src="../assets/lib/js/Jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="./assets/lib/js/Jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="./assets/lib/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- <script type="module" src="../controllers/v1/main-v1.js"></script> -->
+    <script type="module" src="./Js/mainV1.js"></script>
+  </body>
+</html>

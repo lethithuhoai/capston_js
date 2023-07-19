@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./image/banner" class="d-block w-100" style="height: 100vh;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./image/banner3" class="d-block w-100" style="height: 100vh;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./image/banner4.jpg" class="d-block w-100" style="height: 100vh;" alt="...">
+                </div>
+            </div>
+        </div>
+        <div id="header">
+            <h1>CYBER PHONE</h1>
+            <div id="menu">
+                <div class="item">
+                    <a href="http://127.0.0.1:5500/index.html">Trang chủ</a>
+                </div>
+                <div class="item">
+                    <a href="#listCard">Sản phẩm</a>
+                </div>
+                <div class="item">
+                    <a href="#hello">Liên hệ</a>
+                </div>
+            </div>
+            <div id="actions">
+                <div class="item">
+                    <a href="./login.html" class="fa-solid fa-gear" title="admin"></a>
+                    <a href="./login.html">
+                        <p class="admin" title="admin">admin</p>
+                    </a>
+                </div>
+                <div class="shopping">
+                    <img src="./image/shopping (1).svg" title="giỏ hàng">
+                    <span class="quantity">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <h2 class="title_modules">
+            <span class="large " style="font-family: 'Montserrat', sans-serif; font-size: 25px;">
+                SẢN PHẨM THEO DANH MỤC
+            </span>
+            <span class="mini " style="z-index: 10;">
+
+                Những sản phẩm nổi tiếng với chất lượng hàng đầu được shop nhập về phục vụ quý khách hàng
+            </span>
+        </h2>
+    </div>
+    <div class="item-1">
+        <div class="wrap1">
+            <div class="item_1">
+                <span>
+                    <img onclick="changeProduct('iphone', this)" src="./image/iphone14.png">
+                </span>
+                <br>
+                <p class="tabbtn" onclick="changeProduct('iphone', this)">Iphone</p>
+            </div>
+            <div class="item_2">
+                <span>
+                    <img onclick="changeProduct('samsung', this)" src="./image/Galaxy-S22-Ultra-Black.jpg">
+                </span>
+                <br>
+                <p class="tabbtn" onclick="changeProduct('samsung', this)">SamSung</p>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Tìm kiếm" id="searchName">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="card" id="modal">
+        <h1>GIỎ HÀNG</h1>
+        <div class="cardul">
+            <ul>
+                <li>Sản phẩm</li>
+                <li>Tên sản phẩm</li>
+                <li>Giá </li>
+                <li>Số lượng</li>
+            </ul>
+        </div>
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Thanh toán</div>
+            <button class="closeCard">Đóng</button>
+        </div>
+    </div>
+
+
+    <div class="listPD">
+        <h2 style=" padding-top: 50px; padding-left: 70px; font-size: 35px; font-family: 'Montserrat', sans-serif; ">
+            THƯƠNG HIỆU NỔI BẬT</h2>
+        <section class="list" id="listCard">
+        </section>
+    </div>
+
+
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <a href="#header">
+            <i class="fa-solid fa-angle-up"></i>
+        </a>
+    </button>
+
+
+  
+
+
+
+    <footer class="site-footer" id="hello">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <h6>Thông tin và chính sách</h6>
+                    <p class="text-justify">Mua hàng và thanh toán online</p>
+                    <p class="text-justify">Mua hàng trả góp online</p>
+                    <p class="text-justify">Tra thông tin đơn hàng</p>
+                    <p class="text-justify">Tra thông tin bảo hành</p>
+                    <p class="text-justify">Xem ưu đãi</p>
+                    <p class="text-justify">Trung tâm bảo hành chính hãng</p>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <h6>Tổng đài hỗ trợ miễn phí</h6>
+                    <p class="text-justify">Address: </p>
+                    <p class="text-justify">
+                        Số điện thoại:<a href="">+00000000000</a>
+                    </p>
+                    <p class="text-justify">
+                        Email : <a href="">123abc@gmail.com</a>
+                    </p>
+                   
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Dịch vụ và thông tin khác</h6>
+                    <ul class="footer-links">
+                        <li><a href="">Ư đãi thanh toán</a></li>
+                        <li><a href="">Chính sách bảo hành</a></li>
+                        <li><a href="">Tuyển dụng</a></li>
+                        <li><a href="">Liên hệ hợp tác kinh doanh</a></li>
+                        <li><a href="">Dịch vụ bảo hành điện thoại</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Kết với với Cyber Phone</h6>
+                    <ul class="footer-links">
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Contribute</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                        <a href="#">Scanfcode</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="./Js/main.js"></script>
+</body>
+
+</html>

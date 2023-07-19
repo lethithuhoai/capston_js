@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Jekyll v4.1.1" />
+    <title>Mobile-list</title>
+    <!-- link icon  -->
+    <linkrel
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
+    >
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Mobile</a>
+      <button
+        class="navbar-toggler position-absolute d-md-none collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <input
+        class="form-control form-control-dark w-100"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          id="sidebarMenu"
+          class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+        >
+          <div class="sidebar-sticky pt-3">
+            <ul class="nav flex-column">
+              <!-- <li class="nav-item">
+              <a class="nav-link" href="./index.html">
+                <i class="fa fa-home"></i>
+                Dashboard <span class="sr-only">(current)</span>
+              </a>
+            </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="./mobile.html">
+                  <!-- <i class="fa fa-utensils"></i> -->
+                  <i class="fas fa-mobile-alt"></i>
+                  Add Mobile
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./mobile-list.html">
+                  <i class="fa fa-list"></i>
+                  Mobile List
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="http://127.0.0.1:5500/CAPSTONE-JS/CAPSTONE%20JS/index.html"
+                >
+                  Về trang chủ
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <nav class="my-3" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <!-- <li class="breadcrumb-item"><a href="./index.html">Dashboard</a></li> -->
+              <!-- cái này có thể thêm link vào trang product của ông Huy  -->
+              <li class="breadcrumb-item active" aria-current="page">
+                Mobile List
+              </li>
+            </ol>
+          </nav>
+
+          <h2>Danh Sách sản phẩm</h2>
+          <!-- Button trigger modal -->
+          <div class="row">
+            <div class="col-8">
+              <button
+                id="btnThem"
+                type="button"
+                class="btn btn-info mb-3 text-white"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Thêm sản phẩm
+              </button>
+            </div>
+            <div class="col-4">
+              <div class="form-group row">
+                <label for="selLoai" class="col-sm-2 col-form-label"
+                  >Show</label
+                >
+                <div class="col-sm-10">
+                  <select class="custom-select" id="selLoai" onchange="">
+                    <option selected>Chọn loại</option>
+                    <option value="all">Tất cả</option>
+                    <option value="loai1">Iphone</option>
+                    <option value="loai2">Samsung</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive foodTable">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr class="bg-info text-white">
+                  <th>ID</th>
+                  <th>Tên sản phẩm</th>
+                  <th>Màn hình</th>
+                  <th>Camera sau</th>
+                  <th>Camera trước</th>
+                  <th>Mô tả</th>
+                  <th>Loại</th>
+                  <th>Giá</th>
+                  <th>Hình ảnh</th>
+                  <th>Thao tác</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="tbodyMobile"></tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- <footer class="my-5 pt-5 text-muted text-center text-small fixed-bottom">
+    <p class="mb-1">&copy; 2017-2020 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer> -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Thêm sản phẩm</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="needs-validation" id="mobileForm">
+              <div class="row">
+                <!-- <div class="col-md-6 mb-3">
+                <label for="maSP">Mã sản phẩm</label>
+                <input  type="text" class="form-control" id="maSP" placeholder="Nhập ID" value="" required>
+                <div id="invalidID" name="maSP" class="invalid-feedback">
+                </div>
+              </div> -->
+                <div class="col-md-6 mb-3">
+                  <label for="tenSP">Tên sản phẩm</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Nhập tên sản phẩm"
+                    required
+                  />
+                  <div id="invalidTen" name="tenSP" style="color: red"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="manHinh">Màn hình</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="screen"
+                    placeholder="Nhập màn hình"
+                    required
+                  />
+                  <div id="invalidMan" name="manHinh" style="color: red"></div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="cameraSau">Camera sau</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="backCamera"
+                    placeholder="Nhập thông số camera sau"
+                    required
+                  />
+                  <div
+                    id="invalidBackCamera"
+                    name="backCamera"
+                    style="color: red"
+                  ></div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="cameraSau">Camera trước</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="frontCamera"
+                    placeholder="Nhập thông số camera trước"
+                    required
+                  />
+                  <div
+                    id="invalidFrontCamera"
+                    name="frontCamera"
+                    style="color: red"
+                  ></div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="moTa">Mô Tả</label>
+                  <textarea
+                    class="form-control"
+                    id="desc"
+                    rows="3"
+                    placeholder="Nhập mô tả"
+                  ></textarea>
+                  <div id="invalidMoTa" style="color: red"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="loai">Loại</label>
+                  <select
+                    class="custom-select d-block w-100"
+                    id="type"
+                    name="loai"
+                    required
+                  >
+                    <option value="">Chọn loại</option>
+                    <option value="loai1">Iphone</option>
+                    <option value="loai2">Samsung</option>
+                  </select>
+                  <div id="invalidLoai" style="color: red"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="giaSP">Giá Sản phẩm</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="price"
+                    placeholder="Nhập giá"
+                    value=""
+                    required
+                  />
+                  <div id="invalidGia" style="color: red"></div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-group">
+                  <label for="hinhSP">Hình sản phẩm</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="image"
+                    placeholder="Nhập hình ảnh"
+                    value=""
+                    required
+                  />
+                  <div id="invalidHinh" style="color: red"></div>
+                </div>
+              </div>
+              <div class="text-end" style="text-align: end">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-info" id="btnCapNhat">
+                  Cập Nhật
+                </button>
+                <!-- test -->
+                <button type="button" class="btn btn-info" id="btnThemSP">
+                  Thêm
+                </button>
+                <!-- test -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/lib/js/Jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="../CAPSTONE JS/"></script>
+    <script src="./assets/lib/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/lib/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- <script type="module" src="../controllers/v2/main-v2.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./Js/mainV2.js"></script>
+  </body>
+</html>
