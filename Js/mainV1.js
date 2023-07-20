@@ -12,7 +12,6 @@ const layThongTinDienThoai = () => {
     const { name, value } = ele;
     mobile[name] = value;
   });
-  // console.log("element: ", elements);
 
   const {
     maSP,
@@ -25,24 +24,14 @@ const layThongTinDienThoai = () => {
     hinhSP,
     moTa,
   } = mobile;
-
-  return new Mobile(
-    maSP,
-    tenSP,
-    manHinh,
-    cameraSau,
-    cameraTruoc,
-    loai,
-    giaSP,
-    hinhSP,
-    moTa
-  );
+  return mobile;
 };
 // tạo 1 đối tượng mobile từ class Mobile
 
 getElement("#btnThemSP").onclick = () => {
   if (checkValid()) return alert("Vui lòng nhập đầy đủ thông tin!");
 
+  const loại = getElement("#loai").value;
   const mobile = layThongTinDienThoai();
   const elements = document.querySelectorAll(
     ".mobileDetail li span, .mobileDetail li img, .mobileDetail li p"
@@ -50,10 +39,11 @@ getElement("#btnThemSP").onclick = () => {
 
   elements.forEach((item) => {
     const name = item.getAttribute("name");
+
     if (name === "hinhSP") {
       item.src = mobile[name];
     } else if (name === "loai") {
-      item.innerHTML = mobile.mapLoai();
+      item.innerHTML = loại === "loai1" ? "Iphone" : "Samsung";
     } else {
       item.innerHTML = mobile[name];
     }
@@ -65,7 +55,7 @@ getElement("#btnThemSP").onclick = () => {
 const checkEmty = (value, alert, name) => {
   if (!value) {
     if (alert === "#invalidLoai") {
-      console.log('1111111111');
+      console.log("1111111111");
       getElement(alert).innerHTML = "Chọn loại";
     } else {
       getElement(alert).innerHTML = name;
