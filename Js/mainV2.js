@@ -5,7 +5,7 @@ const getElement = (selector) => {
 };
 
 let isValidate = false;
-console.log("tests");
+let dataPhonesList = [];
 
 const getMobileList = () => {
   const promise = axios({
@@ -16,6 +16,7 @@ const getMobileList = () => {
   promise
     .then((result) => {
       renderTable(result.data);
+      dataPhonesList.push(...result.data);
     })
     .catch((err) => {
       console.log(err);
@@ -54,6 +55,35 @@ const renderTable = (arr) => {
   }
 
   getElement("#tbodyMobile").innerHTML = htmlContent;
+};
+
+getElement("#search").onclick = () => {
+  let valueSearch = getElement("#searchName").value;
+  let newArrSearch = [];
+  if (dataPhonesList?.length > 0) {
+    dataPhonesList.forEach((e) => {
+      const name = e?.name?.toUpperCase();
+      if (name?.match(valueSearch?.toUpperCase())?.[0]) {
+        newArrSearch.push(e);
+      }
+    });
+  }
+
+  renderTable(newArrSearch?.length > 0 ? newArrSearch : dataPhonesList);
+};
+
+getElement("#selLoai").onchange = () => {
+  let valueSelected = getElement("#selLoai").value;
+  let newArrFilterType = [];
+  if (dataPhonesList?.length > 0) {
+    dataPhonesList.forEach((e) => {
+      if (e?.type === valueSelected) {
+        newArrFilterType.push(e);
+      }
+    });
+  }
+
+  renderTable(newArrFilterType?.length > 0 ? newArrFilterType : dataPhonesList);
 };
 
 const layThongTinDienThoai = () => {
